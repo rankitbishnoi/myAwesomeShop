@@ -1,0 +1,15 @@
+.card {
+  border: none;
+}
+
+.img {
+  max-width: 100%;
+  width: 15em;
+  height: 10em;
+}
+
+.card-img-top {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}

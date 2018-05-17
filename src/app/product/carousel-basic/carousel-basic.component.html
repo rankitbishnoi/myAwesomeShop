@@ -1,0 +1,14 @@
+  <ngb-carousel *ngIf="images" #myCarousel="ngbCarousel">
+    <ng-template ngbSlide *ngFor="let image of images; let i = index;" [id]="i">
+      <div>
+        <img [src]="image" alt="Random first slide" class="mx-auto" style="height: 50vh; width: auto; max-width: 100%;">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <div class="d-none d-sm-none d-md-block">
+    <ul class="list-inline m-3">
+      <li class="list-inline-item" *ngFor="let image of images; let i = index;">
+        <img [src]="image" alt="" class="img-thumbnail" style="height: 50px; width: 50px" (click)="myCarousel.select(i)">
+      </li>
+    </ul>
+  </div>

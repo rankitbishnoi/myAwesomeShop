@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row my-5 px-3" *ngIf="productState">
+    <div class="col-12 col-md-6 py-3">
+      <app-carousel-basic [urls]="productState.images"></app-carousel-basic>
+      <hr class="d-block d-sm-block d-md-none">
+    </div>
+    <div class="col-12 col-md-6" >
+      <div>
+        <h2>{{productState.name}}</h2>
+        <p class="text-muted text-justify mb-0">{{productsDetails.primary_product.desc | shortDesc:shortDescValue}}</p>
+        <p class="C-green font-weight-bold" (click)="expandDesc()" *ngIf="shortDescValue">+More</p>
+        <p class="C-green font-weight-bold" (click)="expandDesc()" *ngIf="!shortDescValue">-Less</p>
+      </div>
+      <hr>
+      <div class="py-3">
+        <h3>&#8377; {{productState.sale_price | number: '1.0-0'}} &nbsp;<span class="text-muted stripped font-weight-normal mark-price">&#8377; {{productState.mark_price | number: '1.0-0'}}</span></h3>
+        <p class="C-green font-weight-bold my-0">You have saved &#8377; {{productState.mark_price - productState.sale_price | number: '1.0-0'}} [{{productState.sale_msg | slice:0:3}}]</p>
+        <p class="font-weight-bold text-muted my-0">Local taxes included where applicable</p>
+      </div>
+      <hr>
+      <div>
+        <div class="text-muted font-weight-bold" *ngFor="let attr of productsDetails.attributes; let i = index;">
+          {{countNoOfAttr(attr._id)}} {{attr.name}} available
+          <br>
+          <ul class="list-inline my-3">
+            <div *ngFor="let option of productsDetails.options;" class="list-inline-item m-0">
+              <li *ngIf="option.attrib_id === attr._id" [class]="' mr-2'">
+                <button type="button" class="" [class]="checkSelection(option._id) + option.name.substr(0,4) + ' btn btn-outline-dark'" (click)="select(option._id, attr._id)">{{option.name}}</button>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div>
+          <p class="text-muted font-weight-bold">Quantity</p>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-dark C-green C-green-border font-weight-bold" (click)="quantity = quantity - 1;">-</button>
+            <button type="button" class="btn btn-primary btn-sm C-green-back">{{quantity}}</button>
+            <button type="button" class="btn btn-outline-dark C-green C-green-border font-weight-bold" (click)="quantity = quantity + 1;">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="my-5">
+        <button type="button" class="btn btn-lg C-green-back text-light" style="width: 80%;">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

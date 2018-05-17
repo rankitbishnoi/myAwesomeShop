@@ -1,0 +1,44 @@
+.C-green {
+  color: rgb(23, 183, 178);
+}
+
+.C-green-back {
+  background-color: rgb(23, 183, 178);
+}
+
+.C-green-border {
+  border-color: rgb(23, 183, 178);
+}
+
+.stripped {
+  text-decoration: line-through;
+}
+
+.mark-price {
+  font-size: .75em;
+}
+
+.Gold {
+  border-color: gold;
+  color: gold;
+}
+
+.Rose {
+  border-color: lightpink;
+  color: lightpink;
+}
+
+.Silv {
+  border-color: silver;
+  color: silver;
+}
+
+.Blac {
+  border-color: black;
+  color: black;
+}
+
+.Blue {
+  border-color: blue;
+  color: blue;
+}

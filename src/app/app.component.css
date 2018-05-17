@@ -1,0 +1,23 @@
+@media screen and (min-width: 1200px) {
+  .main {
+    min-height: 73vh;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .main {
+    min-height: 68vh;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .main {
+    min-height: 79vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    min-height: 82vh;
+  }
+}
